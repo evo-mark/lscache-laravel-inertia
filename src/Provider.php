@@ -11,8 +11,10 @@ use Illuminate\Contracts\Http\Kernel;
 
 class Provider extends PackageServiceProvider
 {
-     public function configurePackage(Package $package): void 
-     {
-        $package->name('lscache-laravel-inertia');
-     }
+   public function configurePackage(Package $package): void
+   {
+      $package->name('lscache')
+         ->hasConfigFile()
+         ->hasRoutes(['csrf']);
+   }
 }
